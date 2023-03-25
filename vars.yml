@@ -18,7 +18,7 @@
 - name: printing hello from file level variables
   hosts: localhost
   vars_files:
-    -variables.yml
+    - variables.yml
 
   tasks:
     - name: print hello
