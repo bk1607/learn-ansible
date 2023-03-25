@@ -1,2 +1,7 @@
 -name: printing hello
  hosts: all
+ vars:
+  text: hello world
+ tasks:
+  ansible.builtin.debug:
+    msg: text = {{ text }}
