@@ -13,4 +13,12 @@
       vars:
         text: hello world
       ansible.builtin.debug:
-        msg: text = {{ text }}
+        msg: "{{ text }}"
+
+- name: printing hello from file level variables
+  hosts: localhost
+  vars_file: /variables.yml
+  tasks:
+    - name: print hello
+      ansible.builtin.debug:
+        msg: "{{ text }}
