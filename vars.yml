@@ -17,7 +17,9 @@
 
 - name: printing hello from file level variables
   hosts: localhost
-  vars_file: /variables.yml
+  vars_files:
+    -variables.yml
+
   tasks:
     - name: print hello
       ansible.builtin.debug:
