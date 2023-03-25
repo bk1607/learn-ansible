@@ -1,5 +1,5 @@
 - name: sample play1
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Print hello
       ansible.builtin.debug:
