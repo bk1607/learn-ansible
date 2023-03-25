@@ -1,8 +1,16 @@
-- name: printing hello
-  hosts: all
+- name: printing hello from play levl variables
+  hosts: localhost
   vars:
     text: hello world
   tasks:
     - name: printing hello
       ansible.builtin.debug:
         msg: text = {{ text }}
+- name: printing hello from task level variables
+  hosts: localhost
+  tasks:
+    vars:
+      text: hello world
+    - name: printing hello
+      ansible.builtin.debug:
+        msg: "{{ text }}"
