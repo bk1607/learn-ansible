@@ -9,8 +9,8 @@
 - name: printing hello from task level variables
   hosts: localhost
   tasks:
-    vars:
-      text: hello world
-    - name: printing hello
+    - name: print hello
+      vars:
+        text: hello world
       ansible.builtin.debug:
-        msg: "{{ text }}"
+        msg: text = {{ text }}
