@@ -26,4 +26,9 @@
       ansible.builtin.debug:
         msg: "{{ text }}"
 
-- name:
+- name: printing hello from cli level
+  hosts: localhost
+  tasks:
+    - name: hello
+      ansible.builtin.debug:
+        msg: "{{ text }}"
