@@ -1,6 +1,9 @@
 - name: sample play1
   hosts: all
   tasks:
-    - name: Print hello
-      ansible.builtin.debug:
-        msg: Hello world testing
+    - name: Printing uptime
+      ansible.builtin.shell: uptime
+        register: up
+    - name:
+        ansible.builtin.debug:
+          msg: "{{ up }}"
