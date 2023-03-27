@@ -1,9 +1,9 @@
 - name: sample play1
   hosts: all
   tasks:
-    - name: Printing uptime
+    - name: get uptime output
       ansible.builtin.shell: uptime
-        register: "up"
+      register: out
     - name:
         ansible.builtin.debug:
-          msg: "{{ up }}"
+          msg: "{{ out }}"
