@@ -6,6 +6,7 @@
     - name: printing hello
       ansible.builtin.debug:
         msg: "{{ text }}"
+
 - name: printing hello from task level variables
   hosts: localhost
   tasks:
@@ -24,3 +25,5 @@
     - name: print hello
       ansible.builtin.debug:
         msg: "{{ text }}"
+
+- name:
