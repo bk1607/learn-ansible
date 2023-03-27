@@ -7,3 +7,4 @@
     - name:
       ansible.builtin.debug:
         msg: "{{ out }}"
+

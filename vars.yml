@@ -32,3 +32,8 @@
     - name: hello
       ansible.builtin.debug:
         msg: "{{ text }}"
+
+- name: role level variables
+  hosts: localhost
+  roles:
+    - demo
