@@ -1,0 +1,6 @@
+- name: learning about variables
+  hosts: localhost
+  tasks:
+    - name: printing variables
+      ansible.builtin.debug:
+        msg: "{{ url }}"
