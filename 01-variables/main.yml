@@ -18,6 +18,8 @@
 
 - name: learning about variables
   hosts: localhost
+  vars_files:
+    - vars.yml
   tasks:
     - name: printing variables
       ansible.builtin.debug:
