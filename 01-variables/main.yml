@@ -1,5 +1,7 @@
 - name: learning about variables
   hosts: localhost
+  vars:
+    url: hello.com from play level
   tasks:
     - name: printing variables
       ansible.builtin.debug:
