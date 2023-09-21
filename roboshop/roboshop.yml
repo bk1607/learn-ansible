@@ -1,4 +1,5 @@
 - name: it will configure the service
   hosts: localhost
+  become: true
   roles:
     - frontend
