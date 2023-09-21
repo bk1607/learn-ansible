@@ -1,3 +1,4 @@
 - name: it will configure the service
+  hosts: localhost
   roles:
     - frontend
