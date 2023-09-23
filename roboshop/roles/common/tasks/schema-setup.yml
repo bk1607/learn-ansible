@@ -1,0 +1,27 @@
+- name: execute mongodb block
+  block:
+    - name: setup mongodb repo
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
+
+    - name: install mongodb
+      ansible.builtin.dnf:
+        name: mongodb-org-shell
+        state: installed
+
+    - name: load schema
+      ansible.builtin.shell: mongo --host mongodb.devops2023.online </app/schema/{{ component }}.js
+  when: "{{ schema_type }}" == "mongo"
+
+- name: execute mysql block
+  block:
+    - name: install mysql
+      ansible.builtin.dnf:
+        name: mysql
+        state: installed
+
+    - name: load schema
+      ansible.builtin.shell: mysql -h mysql.devops2023.online -uroot -pRoboShop@1 < /app/schema/"{{ component }}".sql
+  when: "{{ schema_setup }}" == mysql
+

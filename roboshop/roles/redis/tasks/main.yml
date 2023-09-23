@@ -4,11 +4,21 @@
     disable_gpg_check: true
     state: installed
 
-- name: enable redis6.2
-  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
-
 
 - name: install redis
   ansible.builtin.dnf:
-    name: redis
+    name: "@redis:remis-6.2"
+    enabled: true
     state: installed
+
+- name: Update listen address
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: enable and start redis
+  ansible.builtin.systemd:
+    name: redis
+    enabled: true
+    state: started
