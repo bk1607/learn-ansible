@@ -23,5 +23,5 @@
 
     - name: load schema
       ansible.builtin.shell: mysql -h mysql.devops2023.online -uroot -pRoboShop@1 < /app/schema/"{{ component }}".sql
-  when: "{{ schema_type }}" == "mysql"
+  when: schema_type == "mysql"
 
