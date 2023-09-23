@@ -10,9 +10,9 @@
      file: app-prereq.yml
 
 - name: installing dependencies
-  ansible.builtin.shell: pip3.6 install -r requirements.txt
-  args:
-    chdir: /app
+  ansible.builtin.pip:
+    requirements: /app/requirements.txt
+    executable: pip3.6
 
 - name: app pre requisites
   ansible.builtin.import_tasks:
