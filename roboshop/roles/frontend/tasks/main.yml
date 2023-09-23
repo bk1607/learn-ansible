@@ -1,7 +1,7 @@
 - name: Install nginx
   ansible.builtin.dnf:
     name: nginx
-    state: installed
+    state: present
 
 - name: Remove default content
   ansible.builtin.file:
