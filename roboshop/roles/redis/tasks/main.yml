@@ -7,7 +7,7 @@
 
 - name: install redis
   ansible.builtin.dnf:
-    name: "@redis:remis-6.2"
+    name: '@redis:remis-6.2'
     state: installed
 
 - name: Update listen address
