@@ -23,5 +23,6 @@
 
     - name: load schema
       ansible.builtin.shell: mysql -h {{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mysql_host', region='us-east-1') }} -u{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mysql_user', region='us-east-1') }} -p{{ lookup('amazon.aws.aws_ssm', '{{env}}.{{component}}.mysql_pass', region='us-east-1') }} < /app/schema/"{{ component }}".sql
+      ignore_errors: yes
   when: schema_type == "mysql"
 
