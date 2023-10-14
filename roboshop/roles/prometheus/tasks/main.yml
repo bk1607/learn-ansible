@@ -1,6 +1,6 @@
 - name: installing prometheus
   ansible.builtin.unarchive:
     src: https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
-    dest: /opt/prometheus
+    dest: /opt
     remote_src: yes
 
