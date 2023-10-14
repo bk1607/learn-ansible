@@ -5,7 +5,7 @@
     remote_src: yes
 
 - name: rename prometheus directory
-  ansible.builtin.shell: mv /opt/prom* prometheus
+  ansible.builtin.shell: mv /opt/prom* /opt/prometheus
 
 - name: configure systemd file
   ansible.builtin.copy:
