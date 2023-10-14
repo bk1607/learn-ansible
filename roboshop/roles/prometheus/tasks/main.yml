@@ -4,3 +4,18 @@
     dest: /opt
     remote_src: yes
 
+- name: rename prometheus directory
+  ansible.builtin.shell: mv prom* prometheus
+
+- name: configure systemd file
+  ansible.builtin.copy:
+    src: prometheus.service
+    dest: /etc/systemd/system/
+
+- name: enable and start prometheus service
+  ansible.builtin.systemd:
+    name: prometheus
+    enabled: true
+    state: started
+
+
