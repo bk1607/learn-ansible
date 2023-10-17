@@ -1,0 +1,19 @@
+- name: download and extract prometheus file
+  ansible.builtin.unarchive:
+    src: "{{ prometheus_url }}"
+    dest: /opt/
+    remote_src: yes
+
+- name: configure systemd file
+  ansible.builtin.template:
+    src: prometheus.service
+    dest: /etc/systemd/system/prometheus.service
+
+- name: enable and start prometheus service
+  ansible.builtin.systemd:
+    name: prometheus
+    enabled: true
+    daemon_reload: true
+    state: restarted
+
+
