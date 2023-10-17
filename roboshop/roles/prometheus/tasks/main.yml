@@ -7,3 +7,8 @@
   ansible.builtin.import_tasks:
     file: node_exporter.yml
   when: node_exporter
+
+- name: update scrape_configs of prometheus.yml file
+  ansible.builtin.import_tasks:
+    file: prometheus_config.yml
+  when: prometheus_config

@@ -1,0 +1,11 @@
+- name: update prometheus.yml filr
+  ansible.builtin.template:
+    src: config.yml
+    dest: /opt/{{ prometheus_dir }}/prometheus.yml
+
+- name: enable and start prometheus service
+  ansible.builtin.systemd:
+    name: prometheus
+    enabled: true
+    daemon_reload: true
+    state: restarted
