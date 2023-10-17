@@ -1,11 +1,13 @@
+- name: create prometheus directory
+  ansible.builtin.file:
+    path: /opt/prometheus
+    state: directory
+
 - name: installing prometheus
   ansible.builtin.unarchive:
     src: https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
-    dest: /opt
+    dest: /opt/prometheus
     remote_src: yes
-
-- name: rename prometheus directory
-  ansible.builtin.shell: mv /opt/prom* /opt/prometheus
 
 - name: configure systemd file
   ansible.builtin.copy:
