@@ -1,9 +1,7 @@
-- name: Extract Prometheus filename
-  ansible.builtin.set_fact:
-    prometheus_filename: "{{ prometheus_url | basename }}"
-  vars:
-    prometheus_url: "https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz"
-
 - name: print file name
-  ansible.builtin.debug:
-    msg: "{{ prometheus_filename }}"
+  hosts: localhost
+  tasks:
+    - name: checking directory
+      ansible.builtin.debug:
+        msg: directory is not present
+      when: xyz not in /opt/prometheus
