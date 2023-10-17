@@ -1,0 +1,2 @@
+prometheus_url: https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
+prometheus_dir: "{{ prometheus_url | split('/') | last | regex_replace('.tar.gz','') }}"
