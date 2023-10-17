@@ -1,0 +1,16 @@
+- name: download and extract node exporter files
+  ansible.builtin.unarchive:
+    src: "{{ node_exporter_url }}"
+    dest: /opt/
+    remote_src: yes
+
+- name: configure systemd file
+  ansible.builtin.template:
+    src: node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+
+- name: enable and start node_exporter service
+  ansible.builtin.systemd:
+    name: node_exporter
+    state: started
+    enabled: true

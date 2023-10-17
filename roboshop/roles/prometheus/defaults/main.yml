@@ -1,3 +1,6 @@
 prometheus_url: https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
 prometheus_dir: "{{ prometheus_url | split('/') | last | regex_replace('.tar.gz','') }}"
 prometheus_server: false
+node_exporter: false
+node_exporter_url: https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
+node_exporter_dir: "{{ node_exporter_url | split('/') | last | regex_replace('.tar.gz','') }}"
