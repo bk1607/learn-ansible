@@ -1,0 +1,4 @@
+dependencies:
+  - role: common
+    vars:
+      node_exporter: true
