@@ -8,7 +8,7 @@
     src: "{{ item }}"
     dest: /opt/{{ prometheus_dir }}/{{ item }}
   loop:
-    - "{{ alerts_files }}"
+    - "{{ alert_files }}"
 
 - name: enable and start prometheus service
   ansible.builtin.systemd:
