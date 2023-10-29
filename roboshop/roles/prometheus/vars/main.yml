@@ -1,0 +1,3 @@
+alert_files:
+  - server_status.yml
+  - cpu_utilization.yml
