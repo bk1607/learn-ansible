@@ -5,7 +5,7 @@
 
 - name: update alerts file
   ansible.builtin.template:
-    src: {{ item }}
+    src: "{{ item }}"
     dest: /opt/{{ prometheus_dir }}/{{ item }}
   loop:
     - "{{ alert_files }}"
