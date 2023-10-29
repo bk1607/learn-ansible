@@ -14,3 +14,6 @@
     enabled: true
     daemon_reload: true
     state: restarted
+
+- name: check prometheus is started or not
+  ansible.builtin.shell: netstat -lntp | grep 9090
