@@ -3,10 +3,12 @@
     src: config.yml
     dest: /opt/{{ prometheus_dir }}/prometheus.yml
 
-- name: update server_status file
+- name: update alerts file
   ansible.builtin.template:
-    src: server_status.yml
-    dest: /opt/{{ prometheus_dir }}/server_status.yml
+    src: "{{ item }}"
+    dest: /opt/{{ prometheus_dir }}/{{ item }}
+  loop:
+    alerts_files
 
 - name: enable and start prometheus service
   ansible.builtin.systemd:
