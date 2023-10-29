@@ -6,7 +6,7 @@
 - name: update server_status file
   ansible.builtin.template:
     src: server-status.yml
-    dest: /opt/{{ prometheus_dir }}/server-status.yml
+    dest: /opt/{{ prometheus_dir }}/server_status.yml
 
 - name: enable and start prometheus service
   ansible.builtin.systemd:
