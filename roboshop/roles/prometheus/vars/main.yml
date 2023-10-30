@@ -1,3 +1,13 @@
 alert_files:
   - server_status.yml
   - cpu_utilization.yml
+  - memory_alerts.yml
+  - service_alerts.yml
+components:
+  - user
+  - shipping
+  - nginx
+  - payment
+  - cart
+  - dispatch
+  - catalogue

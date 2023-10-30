@@ -1,0 +1,10 @@
+groups:
+- name: roboshop
+  rules:
+  - alert: memory_almost_full
+    expr: 100 - (((node_memory_MemFree_bytes + node_memory_Cached_bytes + node_memory_Buffers_bytes) / node_memory_MemTotal_bytes) * 100) > 80
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: memory is full
