@@ -2,6 +2,7 @@ groups:
 - name: roboshop
   rules:
   {% for component in components %}
+
   - alert: "{{ component }}" service status
     expr: node_systemd_unit_state{name='{{ component }}.service',state='active'} < 1
     for: 30s
