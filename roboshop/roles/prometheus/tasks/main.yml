@@ -16,4 +16,4 @@
 - name: update alertmanager configuration
   ansible.builtin.import_tasks:
     file: alertmanager_config.yml
-  when: alertmanager
+  when: alertmanager_config
