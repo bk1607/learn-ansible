@@ -12,3 +12,8 @@
   ansible.builtin.import_tasks:
     file: prometheus_config.yml
   when: prometheus_config
+
+- name: update alertmanager configuration
+  ansible.builtin.import_tasks:
+    file: alertmanager_config.yml
+  when: alertmanager

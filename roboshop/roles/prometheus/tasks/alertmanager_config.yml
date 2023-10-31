@@ -1,0 +1,14 @@
+- name: update alert manager configuration
+  ansible.builtin.template:
+    src: alertmanager.yml
+  dest: /opt/alertmanager/alertmanager.yml
+
+- name: enable and start alert manager service
+  ansible.builtin.systemd:
+    name: alertmanager
+    enabled: true
+    daemon_reload: true
+    state: restarted
+
+- name: check alert manager is running or not
+  ansible.builtin.shell: netstat -lntp | grep 9093
