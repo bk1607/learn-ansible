@@ -1,7 +1,8 @@
 - name: update alert manager configuration file
   ansible.builtin.template:
     src: alertmanager.yml
-    dest: /opt/alertmanager/alertmanager.yml
+    dest: /opt/alertmanager.yml
+
 - name: enable and start alert manager service
   ansible.builtin.systemd:
     name: alertmanager
