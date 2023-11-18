@@ -19,10 +19,10 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-- name: create nginx reverse proxy configuration
-  ansible.builtin.template:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
+#- name: create nginx reverse proxy configuration
+#  ansible.builtin.template:
+#    src: roboshop.conf
+#    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: enable and restart nginx service
   ansible.builtin.systemd:
